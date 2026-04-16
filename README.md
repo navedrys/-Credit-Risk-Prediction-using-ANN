@@ -10,18 +10,15 @@
 
 ✨ A production-ready Machine Learning Web App that predicts whether a customer is a credit risk using an Artificial Neural Network (ANN).
 
-🚀 Built with real-world workflow → from data → model → deployment
+🚀 Built with a complete pipeline: Data → Model → Deployment
 
 🌟 Why This Project Stands Out
-
-✔ Real-world financial problem
+✔ Real-world financial use case
 ✔ End-to-End ML pipeline
-✔ ANN (Deep Learning) implementation
+✔ Deep Learning (ANN) implementation
 ✔ Deployed using Streamlit
 ✔ Handles preprocessing + prediction
-
 🌳 Workflow (Tree Structure)
-
 📦 Credit Risk Prediction System
 │
 ├── 📥 Data Layer
@@ -40,9 +37,9 @@
 │
 ├── 🧠 Model Layer (ANN)
 │   ├── Input Layer
-│   ├── Hidden Layer (64 neurons, ReLU)
-│   ├── Hidden Layer (32 neurons, ReLU)
-│   ├── Hidden Layer (16 neurons, ReLU)
+│   ├── Dense Layer (64, ReLU)
+│   ├── Dense Layer (32, ReLU)
+│   ├── Dense Layer (16, ReLU)
 │   └── Output Layer (Sigmoid)
 │
 ├── 📊 Evaluation Layer
@@ -52,55 +49,50 @@
 │   └── Loss Analysis
 │
 ├── 🔮 Prediction Layer
-│   ├── User Input from UI
-│   ├── Data Scaling
+│   ├── User Input (Streamlit UI)
+│   ├── Feature Scaling
 │   └── Model Prediction
 │
 └── 🌐 Deployment Layer
     ├── Streamlit Web App
-    ├── User-Friendly Interface
+    ├── Clean UI
     └── Real-time Prediction
+🧠 Model Architecture
+Input Features → Dense(64) → Dense(32) → Dense(16) → Output(1)
 
-    🧠 Model Architecture
+Activation Functions:
 
-    Input Features → Dense(64) → Dense(32) → Dense(16) → Output(1)
-
-    📌 Activation:
-
-ReLU → Hidden layers
-Sigmoid → Output
-
-| Prediction | Meaning                     |
-| ---------- | --------------------------- |
-| 1          | ✅ Low Risk (Loan Approved)  |
-| 0          | ❌ High Risk (Loan Rejected) |
-
-
+ReLU → Hidden Layers
+Sigmoid → Output Layer
+🎯 Output
+Prediction	Meaning
+1	✅ Low Risk (Loan Approved)
+0	❌ High Risk (Loan Rejected)
 ⚙️ Tech Stack
 🐍 Python
 🧠 TensorFlow / Keras
 📊 Pandas, NumPy
 ⚙️ Scikit-learn
 🌐 Streamlit
-
 💡 App Features
-
-✨ Simple UI
-⚡ Fast prediction
+✨ Simple and clean UI
+⚡ Fast predictions
 📊 Real-time results
 🧠 Deep learning powered
-
 📈 Model Performance
 Accuracy: ~75–85%
-Balanced using:
-Class weights
+Improvements applied:
+Class imbalance handling
 Feature scaling
+Optimized ANN architecture
+🚀 Run Locally
+pip install -r requirements.txt
+streamlit run streamlit_app.py
 🔮 Future Improvements
 Hyperparameter tuning
-Better UI design
-Cloud deployment
-Add more features
+UI/UX enhancements
+Cloud deployment (AWS / Render)
+More feature inputs
 ⭐ Show Your Support
 
 If you like this project, give it a ⭐ on GitHub!
-
