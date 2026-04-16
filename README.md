@@ -7,58 +7,100 @@
 💻 GitHub: https://github.com/your-link
 
 💳 Credit Risk Prediction using ANN
-🚀 A machine learning project that predicts whether a customer is a credit risk using an Artificial Neural Network (ANN).
-This system helps in making loan approval decisions based on customer financial data.
 
-🌟 Key Highlights
+✨ A production-ready Machine Learning Web App that predicts whether a customer is a credit risk using an Artificial Neural Network (ANN).
 
-✔ End-to-End ML Project
-✔ Real-world finance use case
-✔ ANN-based classification
-✔ Streamlit Web App
-✔ Model deployment ready
+🚀 Built with real-world workflow → from data → model → deployment
 
-🧠 Model Overview
-Input Layer → Customer features
-Hidden Layers → Dense (ReLU activation)
-Output Layer → Sigmoid (Binary classification)
+🌟 Why This Project Stands Out
 
-📌 Output:
+✔ Real-world financial problem
+✔ End-to-End ML pipeline
+✔ ANN (Deep Learning) implementation
+✔ Deployed using Streamlit
+✔ Handles preprocessing + prediction
 
-1 → Low Risk ✅ (Loan Approved)
-0 → High Risk ❌ (Loan Rejected)
-🔄 Workflow Diagram
+🌳 Workflow (Tree Structure)
 
-⚙️ Project Workflow
-Data Collection → Data Cleaning → Encoding → Feature Scaling  
-→ Train-Test Split → ANN Training → Evaluation → Prediction → Deployment
-🛠️ Tech Stack
-Python
-TensorFlow / Keras
-Pandas, NumPy
-Scikit-learn
-Streamlit
-📊 Model Performance
+📦 Credit Risk Prediction System
+│
+├── 📥 Data Layer
+│   ├── Load Dataset (German Credit Data)
+│   ├── Data Cleaning
+│   └── Missing Value Handling
+│
+├── 🔄 Preprocessing Layer
+│   ├── Encoding (Categorical → Numeric)
+│   ├── Feature Selection
+│   └── Feature Scaling (StandardScaler)
+│
+├── ✂️ Data Split
+│   ├── Training Data (80%)
+│   └── Testing Data (20%)
+│
+├── 🧠 Model Layer (ANN)
+│   ├── Input Layer
+│   ├── Hidden Layer (64 neurons, ReLU)
+│   ├── Hidden Layer (32 neurons, ReLU)
+│   ├── Hidden Layer (16 neurons, ReLU)
+│   └── Output Layer (Sigmoid)
+│
+├── 📊 Evaluation Layer
+│   ├── Accuracy
+│   ├── Confusion Matrix
+│   ├── Precision / Recall
+│   └── Loss Analysis
+│
+├── 🔮 Prediction Layer
+│   ├── User Input from UI
+│   ├── Data Scaling
+│   └── Model Prediction
+│
+└── 🌐 Deployment Layer
+    ├── Streamlit Web App
+    ├── User-Friendly Interface
+    └── Real-time Prediction
+
+    🧠 Model Architecture
+
+    Input Features → Dense(64) → Dense(32) → Dense(16) → Output(1)
+
+    📌 Activation:
+
+ReLU → Hidden layers
+Sigmoid → Output
+
+| Prediction | Meaning                     |
+| ---------- | --------------------------- |
+| 1          | ✅ Low Risk (Loan Approved)  |
+| 0          | ❌ High Risk (Loan Rejected) |
+
+
+⚙️ Tech Stack
+🐍 Python
+🧠 TensorFlow / Keras
+📊 Pandas, NumPy
+⚙️ Scikit-learn
+🌐 Streamlit
+
+💡 App Features
+
+✨ Simple UI
+⚡ Fast prediction
+📊 Real-time results
+🧠 Deep learning powered
+
+📈 Model Performance
 Accuracy: ~75–85%
-Evaluated using:
-Confusion Matrix
-Precision & Recall
-🚀 Run Locally
-# Install dependencies
-pip install -r requirements.txt
-
-# Run app
-streamlit run streamlit_app.py
-💻 Streamlit App Features
-Simple and user-friendly UI
-Real-time prediction
-Fast and lightweight
-Works with trained ANN model
-📌 Future Improvements
+Balanced using:
+Class weights
+Feature scaling
+🔮 Future Improvements
 Hyperparameter tuning
-Better UI/UX
-Cloud deployment (AWS / Render)
+Better UI design
+Cloud deployment
 Add more features
-⭐ Support
+⭐ Show Your Support
 
 If you like this project, give it a ⭐ on GitHub!
+
