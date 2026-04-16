@@ -1,50 +1,36 @@
-# streamlit_app.py
-
 import streamlit as st
 import numpy as np
 import pickle
 from tensorflow import keras
 
-# Load model and scaler
+# Load model & scaler
 model = keras.models.load_model("model.keras")
 scaler = pickle.load(open("scaler.pkl", "rb"))
 
-# -------------------------------
-# SIDEBAR (Your Credentials)
-# -------------------------------
-st.sidebar.title("👨‍💻 Developer Info")
-
-st.sidebar.write("**Name:** Naved Shaikh")
-st.sidebar.write("📧 Email: navedrys@gmail.com")
-st.sidebar.write("📱 Phone: 7414991107")
-st.sidebar.write("🔗 LinkedIn: https://linkedin.com/in/your-link")
-st.sidebar.write("💻 GitHub: https://github.com/your-link")
-
-
 st.title("💳 Credit Risk Prediction")
 
-st.write("Enter customer details:")
+st.sidebar.title("👨‍💻 Developer")
+st.sidebar.write("Naved Shaikh")
+st.sidebar.write("📧 navedrys@gmail.com")
+st.sidebar.write("📱 7414991107")
 
-# Example input fields (keep simple)
-duration = st.number_input("Duration (months)", min_value=1)
-amount = st.number_input("Loan Amount", min_value=0)
-age = st.number_input("Age", min_value=18)
+st.write("Enter values:")
 
-# Button
+# IMPORTANT: number of inputs must match training features
+num_features = scaler.mean_.shape[0]
+
+inputs = []
+for i in range(num_features):
+    val = st.number_input(f"Feature {i+1}", value=0.0)
+    inputs.append(val)
+
 if st.button("Predict"):
+    data = np.array([inputs])
+    data = scaler.transform(data)
 
-    # Create input array (adjust features as per your model)
-    input_data = np.array([[duration, amount, age]])
+    pred = model.predict(data)
 
-    # Scale input
-    input_scaled = scaler.transform(input_data)
-
-    # Prediction
-    prediction = model.predict(input_scaled)
-    result = (prediction > 0.5).astype(int)
-
-    # Output
-    if result[0][0] == 1:
-        st.success("✅ Low Risk (Loan Approved)")
+    if pred[0][0] > 0.5:
+        st.success("✅ Low Risk")
     else:
-        st.error("❌ High Risk (Loan Rejected)")
+        st.error("❌ High Risk")
